@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="samsung_blue">#3F97FF</color>
-    <color name="samsung_blue_container">#002D5A</color>
-    <color name="samsung_blue_on_container">#E5F2FF</color>
 
-    <color name="surface">#000000</color> 
-    <color name="surface_variant">#161719</color> 
+    <color name="window_bg">#000000</color>
+    <color name="surface">#1C1C1E</color>
+
     <color name="on_surface">#F2F2F2</color>
-    <color name="on_surface_variant">#999999</color>
-
-    <color name="banner_warning_bg">#2C1A00</color>
-    <color name="banner_warning_stroke">#5D3F00</color>
-    <color name="banner_warning_text">#FFCC00</color>
+    <color name="on_surface_variant">#ABABAB</color>
+    <color name="divider">#14FFFFFF</color>
 </resources>

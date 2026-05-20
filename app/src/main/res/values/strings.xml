@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DeX Dashboard</string>
+
+    <!-- Gesture dialog -->
+    <string name="gesture_title">Touchpad gestures</string>
+    <string name="gesture_touchpad">Touchpad gestures</string>
+    <string name="gesture_advanced">Advanced option mapping</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Errors -->
+    <string name="error_not_found">Module not found on this firmware.</string>
+    <string name="error_permission">Blocked by system permissions.</string>
+    <string name="error_unavailable">Unavailable on this device.</string>
 </resources>

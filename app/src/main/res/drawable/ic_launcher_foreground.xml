@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Monitor body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,30 L82,30 Q86,30 86,34 L86,70 Q86,74 82,74 L26,74 Q22,74 22,70 L22,34 Q22,30 26,30 Z" />
+    <!-- Screen -->
+    <path
+        android:fillColor="#1A5FC8"
+        android:pathData="M26,34 L82,34 L82,70 L26,70 Z" />
+    <!-- Stand neck -->
+    <rect android:fillColor="#FFFFFF"
+        android:x="49" android:y="74"
+        android:width="10" android:height="8" />
+    <!-- Base -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M39,82 Q39,85 42,85 L66,85 Q69,85 69,82 Q69,79 66,79 L42,79 Q39,79 39,82 Z" />
+    <!-- D letter -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37,43 L47,43 Q61,43 61,52 Q61,61 47,61 L37,61 Z
+                          M42,48 L42,57 L47,57 Q56,57 56,52 Q56,48 47,48 Z" />
+</vector>
