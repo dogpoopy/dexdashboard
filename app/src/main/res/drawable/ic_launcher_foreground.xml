@@ -14,8 +14,8 @@
         android:pathData="M26,34 L82,34 L82,70 L26,70 Z" />
     <!-- Stand neck -->
     <rect android:fillColor="#FFFFFF"
-        android:x="49" android:y="74"
-        android:width="10" android:height="8" />
+        android:x="49dp" android:y="74dp"
+        android:width="10dp" android:height="8dp" />
     <!-- Base -->
     <path android:fillColor="#FFFFFF"
         android:pathData="M39,82 Q39,85 42,85 L66,85 Q69,85 69,82 Q69,79 66,79 L42,79 Q39,79 39,82 Z" />
