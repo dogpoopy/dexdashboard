@@ -7,6 +7,15 @@ android {
     namespace = "com.dexdashboard"
     compileSdk = 35
 
+    signingConfigs {
+        create("release") {
+            storeFile = project.findProperty("RELEASE_STORE_FILE")?.let { file(it as String) }
+            storePassword = project.findProperty("RELEASE_STORE_PASSWORD") as String?
+            keyAlias = project.findProperty("RELEASE_KEY_ALIAS") as String?
+            keyPassword = project.findProperty("RELEASE_KEY_PASSWORD") as String?
+        }
+    }
+
     defaultConfig {
         applicationId = "com.dexdashboard"
         minSdk = 29
@@ -21,6 +30,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release") // Apply the config
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
