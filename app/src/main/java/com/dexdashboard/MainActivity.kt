@@ -7,8 +7,10 @@ import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
+import android.hardware.display.DisplayManager
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Display
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,7 +53,8 @@ class MainActivity : AppCompatActivity() {
     data class SettingEntry(
         val title: String,
         val subtitle: String? = null,
-        val actionType: ActionType
+        val actionType: ActionType,
+        val requiresDisplay: Boolean = true
     )
 
     data class SettingsSection(val label: String, val entries: List<SettingEntry>)
@@ -113,7 +116,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupList() {
         val sections = listOf(
             SettingsSection("General", listOf(
-                SettingEntry("Samsung DeX", "Start DeX mode", ActionType.DirectLaunch(DeXActivity.DEX_MODE))
+                SettingEntry("Samsung DeX", "Start DeX mode", ActionType.DirectLaunch(DeXActivity.DEX_MODE), requiresDisplay = false)
             )),
             SettingsSection("Input", listOf(
                 SettingEntry("Keyboard", null, ActionType.DirectLaunch(DeXActivity.KEYBOARD)),
@@ -130,12 +133,21 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = DashboardAdapter(buildFlatList(sections)) { entry ->
+                if (entry.requiresDisplay && !isExternalDisplayConnected()) {
+                    Toast.makeText(this@MainActivity, R.string.error_no_display, Toast.LENGTH_SHORT).show()
+                    return@DashboardAdapter
+                }
                 when (val a = entry.actionType) {
                     is ActionType.DirectLaunch -> safeLaunchActivity(a.className)
                     is ActionType.GestureDialog -> showGestureDialog()
                 }
             }
         }
+    }
+
+    private fun isExternalDisplayConnected(): Boolean {
+        val dm = getSystemService(DISPLAY_SERVICE) as DisplayManager
+        return dm.displays.any { it.displayId != Display.DEFAULT_DISPLAY }
     }
 
     private fun showGestureDialog() {

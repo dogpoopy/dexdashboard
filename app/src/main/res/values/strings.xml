@@ -12,4 +12,5 @@
     <string name="error_not_found">Module not found on this firmware.</string>
     <string name="error_permission">Blocked by system permissions.</string>
     <string name="error_unavailable">Unavailable on this device.</string>
+    <string name="error_no_display">Start/Connect to Display to use this feature.</string>
 </resources>
