@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     private object DeXActivity {
         const val DEX_MODE          = "com.android.settings.Settings\$DexModeActivity"
-        const val DEX_ENTRY_SCREEN  = "com.android.settings.Settings\$DexEntryScreenSettingsActivity"
         const val KEYBOARD          = "com.android.settings.Settings\$DexModeKeyboardSettingsActivity"
         const val MOUSE             = "com.android.settings.Settings\$DexModeMouseSettingsActivity"
         const val SPEN              = "com.android.settings.Settings\$DexModeSpenSettingsActivity"
@@ -114,8 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupList() {
         val sections = listOf(
             SettingsSection("General", listOf(
-                SettingEntry("Samsung DeX", "Start DeX mode", ActionType.DirectLaunch(DeXActivity.DEX_MODE)),
-                SettingEntry("About DeX", "Introduction to Samsung DeX", ActionType.DirectLaunch(DeXActivity.DEX_ENTRY_SCREEN))
+                SettingEntry("Samsung DeX", "Start DeX mode", ActionType.DirectLaunch(DeXActivity.DEX_MODE))
             )),
             SettingsSection("Input", listOf(
                 SettingEntry("Keyboard", null, ActionType.DirectLaunch(DeXActivity.KEYBOARD)),
